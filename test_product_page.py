@@ -30,6 +30,7 @@ class TestUserAddToBasketFromProductPage:
         page.add_product_to_basket()
         page.solve_quiz_and_get_code()
 
+        # Повторно создаём объект страницы, чтобы обновить состояние после действия
         page = ProductPage(self.browser, self.browser.current_url)
         page.should_be_success_message_with_product_name()
         page.should_be_basket_total_correct()
@@ -42,7 +43,7 @@ def test_guest_can_add_product_to_basket(browser):
     page.open()
     page.add_product_to_basket()
     page.solve_quiz_and_get_code()
-
+    # Проверяем успешное добавление и правильность суммы
     page.should_be_success_message_with_product_name()
     page.should_be_basket_total_correct()
 
@@ -99,18 +100,6 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
 
 
 
-#@pytest.mark.parametrize('link', [
-    #f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer"
-    #if n != 7 else pytest.param(
-        #"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7",
-        #marks=pytest.mark.xfail(reason="known bug on offer7")
-    #)
-    #for n in range(10)
-#]
 
 
-#git commit -m "Add parametrize test for promo offers, mark offer7 as xfail due to known bug"
-
-#git add .
-#git commit -m "Add basket tests: guest can't see product in basket from main and product pages"
 
