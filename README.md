@@ -22,7 +22,7 @@ Pytest markers для группировки тестов
 
 Page Object Model для организации кода
 
-## Структура проекта
+ Структура проекта
 
 page_object_project/
 ├── pages/               # Файлы с классами страниц (Page Objects)
