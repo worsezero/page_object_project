@@ -22,8 +22,9 @@ class TestLoginFromMainPage:
         page.open()
         page.should_be_login_link()
 
-    # Тест проверяет, что корзина пуста при открытии с главной страницы и отображается сообщение об этом
-    def test_guest_cant_see_product_in_basket_opened_from_main_page(self,browser):
+
+# Тест проверяет, что корзина пуста при открытии с главной страницы и отображается сообщение об этом
+def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0"
         page = MainPage(browser, link)
         page.open()
@@ -32,10 +33,13 @@ class TestLoginFromMainPage:
         basket_page.should_be_empty()
         basket_page.should_be_empty_message_present()
 
-    # Метод для перехода на страницу логина (используется в MainPage)
-    def go_to_login_page(self):
+
+# Метод для перехода на страницу логина (используется в MainPage)
+def go_to_login_page(self):
         link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
         link.click()
+
+    
 
 
 
