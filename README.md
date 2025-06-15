@@ -22,7 +22,7 @@ Pytest markers для группировки тестов
 
 Page Object Model для организации кода
 
- Структура проекта
+## Структура проекта
 
 page_object_project/
 ├── pages/               # Файлы с классами страниц (Page Objects)
@@ -32,7 +32,7 @@ page_object_project/
 │   ├── main_page.py
 │   ├── product_page.py
 │   └── locators.py
-├── tests/               # Тесты (test_main_page.py, test_product_page.py и др.)
+                         # Тесты (test_main_page.py, test_product_page.py и др.)
 ├── conftest.py          # Фикстуры pytest
 ├── requirements.txt     # Зависимости проекта
 ├── __init__.py          # Для поддержки относительных импортов
